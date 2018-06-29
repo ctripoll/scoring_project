@@ -1,0 +1,21 @@
+Languages and tools used:
+• Java v1.8.0_151
+• MySQL v5.7.20
+• Eclipse Neon Release v4.6.0 as my IDE
+• Windows 10 v1703
+
+Instructions:
+• The program should create the appropriate database for you
+  under the assumption there is MySQL installed and the root
+  account is set up for the localhost.
+• The program will also check if the database already exists.
+  If the database exists, the program will pick it up and use it.
+• The program will only run under the premise that a MySQl root
+  account exists on the local server.
+
+1. Navigate to the src/ directory.
+2. Navigate to the scoring_project.scoring_project package.
+3. Open the source code HTMLScorerUI.
+4. To run this code in Eclipse, click the green run button (a green 
+   circle with a white arrow point to the right inside) in the top 
+   toolbar.
