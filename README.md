@@ -29,4 +29,4 @@ The scoring system used in this application was given in project requirements wh
 The purpose of this system is to determine if an html page is using recommended and proper syntax. A higher score represents a well written html file.
 
 ## Running the Program
-In any IDE, run the `HTMLScorerUI.java` file. Or if in the command line, navigate to the `src/scoring_project/scoring_project` folder and run the program by typing `java HTMLScorer`. The program will then prompt login and upon successful login, it will present instructions on how to use the system.
+In any IDE, run the `HTMLScorerUI.java` file. Or if in the command line, navigate to the `src/scoring_project/scoring_project` folder and run the `HTMLScorerUI.java` file with the appropriate command. It is recommended to run via Eclipse. The program will then prompt login and upon successful login, it will present instructions on how to use the system.
