@@ -1,52 +1,58 @@
 /**
- * 
+ *
  */
 package scoring_project.util;
+
+import java.util.Hashtable;
 
 /**
  * Returns a score for a given tag and returns it. Score is based on a preset
  * set of rules.
- * 
+ *
  * @author Courtney Ripoll
  *
  */
 public class ScoreReturn {
-	/** Array of scores lined up with each tag */
-	private static int[] scores = { 3, 1, 3, 2, 5, 5, 10, 10, -1, -2, -2, -1, -2, -5, -5 };
-	/** Array of possible tags to score */
-	private static String[] tags = { "div", "p", "h1", "h2", "html", "body", "header", "footer", "font", "center",
-			"big", "strike", "tt", "frameset", "frame" };
+    /** Hashtable of tags and their associated scores */
+    Hashtable<String, Integer> scores = new Hashtable<String, Integer>();
 
-	/**
-	 * Takes in a tag as a String and returns a score for that tag
-	 * 
-	 * @param tag
-	 *            tag to give a score
-	 * @return score for the given tag
-	 */
-	public static int scorer(String tag) {
-		int idx = contains(tag);
-		if (idx != -1) {
-			return scores[idx];
-		} else {
-			return 0;
-		}
-	}
+    /**
+     * Constructs and initializes a hashtable that will be used for retrieving
+     * the scores on each individual html tag. The hashtable uses the tags as
+     * keys and the scores as values
+     */
+    public ScoreReturn () {
+        scores.put( "div", 3 );
+        scores.put( "p", 1 );
+        scores.put( "h1", 3 );
+        scores.put( "h2", 2 );
+        scores.put( "html", 5 );
+        scores.put( "body", 5 );
+        scores.put( "header", 10 );
+        scores.put( "footer", 10 );
+        scores.put( "font", -1 );
+        scores.put( "center", -2 );
+        scores.put( "big", -2 );
+        scores.put( "strike", -1 );
+        scores.put( "tt", -2 );
+        scores.put( "frameset", -5 );
+        scores.put( "frame", -5 );
+    }
 
-	/**
-	 * Checks if a tag is a scorable tag. If is it, it returns the index of the
-	 * tag in reference to the tags array
-	 * 
-	 * @param tag
-	 *            tag to check
-	 * @return index of the tag in the array, -1 if it is not in the array
-	 */
-	private static int contains(String tag) {
-		for (int i = 0; i < tags.length; i++) {
-			if (tags[i].equals(tag)) {
-				return i;
-			}
-		}
-		return -1;
-	}
+    /**
+     * Takes in a tag as a String and returns a score for that tag
+     *
+     * @param tag
+     *            tag to give a score
+     * @return score for the given tag
+     */
+    public int scorer ( String tag ) {
+        try {
+            return scores.get( tag );
+        }
+        catch ( final NullPointerException e ) {
+            return 0;
+        }
+    }
+
 }
